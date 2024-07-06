@@ -1,0 +1,48 @@
+.container {
+    min-width: 100vw;
+    min-height: 100vh;
+
+    padding: var(--padding);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    background: var(--background-color-default);
+}
+
+.display-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    video, canvas {
+        border-radius: var(--border-radius);
+    }
+
+    video {
+        object-fit: cover;
+    }
+
+    canvas {
+        position: absolute;
+
+        &.show-background {
+            background: rgba(0, 0, 255, 0.2);
+        }
+    }
+}
+
+.options-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--padding);
+
+    @media screen and (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
